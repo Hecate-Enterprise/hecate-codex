@@ -1,0 +1,267 @@
+/* Custom styles for Hecate Codex */
+
+/* Active nav link */
+.nav-link.active {
+    background-color: rgb(55, 65, 81);
+    color: white;
+    border-left: 3px solid rgb(14, 165, 233);
+}
+
+/* Table styles */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    background-color: rgb(249, 250, 251);
+    border-bottom: 2px solid rgb(229, 231, 235);
+    font-weight: 600;
+    color: rgb(55, 65, 81);
+}
+
+.data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgb(229, 231, 235);
+}
+
+.data-table tr:hover {
+    background-color: rgb(249, 250, 251);
+}
+
+/* Status badges */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.badge-available {
+    background-color: rgb(220, 252, 231);
+    color: rgb(22, 101, 52);
+}
+
+.badge-assigned {
+    background-color: rgb(219, 234, 254);
+    color: rgb(30, 64, 175);
+}
+
+.badge-in_maintenance {
+    background-color: rgb(254, 249, 195);
+    color: rgb(133, 77, 14);
+}
+
+.badge-retired {
+    background-color: rgb(229, 231, 235);
+    color: rgb(55, 65, 81);
+}
+
+.badge-disposed {
+    background-color: rgb(254, 226, 226);
+    color: rgb(153, 27, 27);
+}
+
+/* Toast animations */
+.toast {
+    animation: slideIn 0.3s ease-out;
+}
+
+.toast.hiding {
+    animation: slideOut 0.3s ease-in forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Modal animations */
+#modal-container.showing {
+    animation: fadeIn 0.2s ease-out;
+}
+
+#modal-container.showing #modal-content {
+    animation: scaleIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Loading spinner */
+.spinner {
+    border: 3px solid rgb(229, 231, 235);
+    border-top-color: rgb(14, 165, 233);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Form styles */
+.form-input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgb(209, 213, 219);
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: rgb(14, 165, 233);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgb(55, 65, 81);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Button styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.15s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: rgb(14, 165, 233);
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: rgb(2, 132, 199);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: rgb(55, 65, 81);
+    border: 1px solid rgb(209, 213, 219);
+}
+
+.btn-secondary:hover {
+    background-color: rgb(249, 250, 251);
+}
+
+.btn-danger {
+    background-color: rgb(239, 68, 68);
+    color: white;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: rgb(220, 38, 38);
+}
+
+.btn-success {
+    background-color: rgb(34, 197, 94);
+    color: white;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: rgb(22, 163, 74);
+}
+
+.btn-warning {
+    background-color: rgb(245, 158, 11);
+    color: white;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: rgb(217, 119, 6);
+}
+
+/* Card styles */
+.card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.pagination button {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgb(209, 213, 219);
+    background-color: white;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.pagination button:hover:not(:disabled) {
+    background-color: rgb(249, 250, 251);
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination button.active {
+    background-color: rgb(14, 165, 233);
+    color: white;
+    border-color: rgb(14, 165, 233);
+}
